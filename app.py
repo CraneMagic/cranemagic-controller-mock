@@ -21,9 +21,9 @@ CORS(app, support_credentials=True)
 
 @app.before_request
 def before_request():
-	print("[%s][%s][%s]" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), request.method, request.full_path))
+	print("[%s][%s][%s]" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), request.method, request.full_path), flush=True)
 	reqJson = request.get_json(silent=True)
-	print(str(reqJson))
+	print(str(reqJson), flush=True)
 
 @app.after_request
 def after_request(resp):
