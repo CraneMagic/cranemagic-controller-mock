@@ -11,11 +11,11 @@ load_dotenv('./.env')
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
-from auth import auth_bp
-from yourBlueprint import yourBlueprint_bp
+# from auth import auth_bp
+# from yourBlueprint import yourBlueprint_bp
 
-app.register_blueprint(auth_bp, url_prefix='/auth')
-app.register_blueprint(yourBlueprint_bp, url_prefix='/yourBlueprint')
+# app.register_blueprint(auth_bp, url_prefix='/auth')
+# app.register_blueprint(yourBlueprint_bp, url_prefix='/yourBlueprint')
 
 CORS(app, support_credentials=True)
 
